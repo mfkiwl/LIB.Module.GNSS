@@ -1,0 +1,56 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "C/C++: cpp build active file",
+            "command": "/usr/local/gcc_linaro/bin/arm-linux-gnueabihf-g++",
+            "args": [
+				"-std=c++17",
+                "-g",
+				"-Wall",
+				"-I${workspaceFolder}/Gnss",
+				"-I${workspaceFolder}/Gnss/Dev",
+				"-I${workspaceFolder}/LIB.Utils",
+				"-I${workspaceFolder}/LIB.Module",
+				"-I/usr/local/boost_1_75_0",
+				"-L/usr/local/gcc_linaro/lib/gcc/arm-linux-gnueabihf/7.5.0",
+				"Gnss/Dev/devDataSet.cpp",
+				"Gnss/Dev/devGNSS.cpp",
+				"Gnss/Dev/devGNSS_ModGnssReceiver.cpp",
+				"Gnss/Dev/devGNSS_ModGnssReceiver_Board.cpp",
+				"Gnss/Dev/devLog.cpp",
+				"Gnss/Dev/devSettings.cpp",
+				"Gnss/Dev/devShell.cpp",
+                "Gnss/main.cpp",
+				"LIB.Utils/utilsLog.cpp",
+				"LIB.Utils/utilsPacketNMEAType.cpp",
+				"LIB.Utils/utilsShell.cpp",
+				"LIB.Module/modGnss.cpp",
+				"LIB.Module/modGnssReceiver.cpp",
+				"LIB.Module/modGnssReceiver_State.cpp",
+				"LIB.Module/modGnssReceiver_StateError.cpp",
+				"LIB.Module/modGnssReceiver_StateHalt.cpp",
+				"LIB.Module/modGnssReceiver_StateOperation.cpp",
+				"LIB.Module/modGnssReceiver_StateStart.cpp",
+				"LIB.Module/modGnssReceiver_StateStop.cpp",
+				"LIB.Module/modGnssReceiver_State_CmdGPI.cpp",
+				"LIB.Module/modGnssReceiver_State_CmdGPO.cpp",
+				"LIB.Module/modGnssReceiver_State_CmdREQ.cpp",				
+                "-o",
+                "${workspaceFolder}/Gnss/gnssrcv",
+				"-lpthread"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
