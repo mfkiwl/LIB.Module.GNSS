@@ -10,7 +10,7 @@ xcopy /Y %PATH_SOURCE%\utilsPacket.*
 xcopy /Y %PATH_SOURCE%\utilsPacketNMEA.*
 xcopy /Y %PATH_SOURCE%\utilsPacketNMEAPayload.*
 rem xcopy /Y %PATH_SOURCE%\utilsPacketNMEAPayloadPMTK.*
-rem xcopy /Y %PATH_SOURCE%\utilsPacketNMEAPayloadPTWS.*
+xcopy /Y %PATH_SOURCE%\utilsPacketNMEAPayloadPTWS.*
 xcopy /Y %PATH_SOURCE%\utilsPacketNMEAType.*
 rem xcopy /Y %PATH_SOURCE%\utilsPatternCommand.*
 xcopy /Y %PATH_SOURCE%\utilsPatternState.*
