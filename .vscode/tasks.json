@@ -36,9 +36,9 @@
 				"LIB.Module/modGnssReceiver_StateStop.cpp",
 				"LIB.Module/modGnssReceiver_State_CmdGPI.cpp",
 				"LIB.Module/modGnssReceiver_State_CmdGPO.cpp",
-				"LIB.Module/modGnssReceiver_State_CmdREQ.cpp",				
+				"LIB.Module/modGnssReceiver_State_CmdREQ.cpp",
                 "-o",
-                "${workspaceFolder}/Gnss/gnssrcv",
+                "${workspaceFolder}/gnss",
 				"-lpthread"
             ],
             "options": {
@@ -50,7 +50,19 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
-        }
+            },
+			"dependsOn":[
+				"ConfigCopy"
+			]
+        },
+		{
+			"label": "ConfigCopy",
+			"command": "cp",
+			"args": [
+				"-f",
+				"Gnss/gnss.conf",
+				"..//"
+			]
+		}
     ]
 }
