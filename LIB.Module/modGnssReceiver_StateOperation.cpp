@@ -64,9 +64,9 @@ void SetParam(T& valDst, U valSrc, bool& check)
 
 void tGnssReceiver::tStateOperation::OnReceived(const tPacketNMEA_Template& value)
 {
-	std::string Payload = value.GetPayload();
+	const std::string Payload = value.GetPayload();
 
-	tPacketNMEA::payload_type PacketData(Payload.cbegin(), Payload.cend());
+	const tPacketNMEA::payload_type PacketData(Payload.cbegin(), Payload.cend());
 
 	std::stringstream StrTime;
 
@@ -93,7 +93,7 @@ void tGnssReceiver::tStateOperation::OnReceived(const tPacketNMEA_Template& valu
 	}
 	else if (tMsgRMC::Try(PacketData.Data))
 	{
-		tMsgRMC Msg(PacketData.Data);
+		const tMsgRMC Msg(PacketData.Data);
 
 		if (!Msg.Date.Empty())
 		{

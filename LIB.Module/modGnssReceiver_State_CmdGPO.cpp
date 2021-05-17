@@ -43,7 +43,7 @@ bool tGnssReceiver::tState::tCmdGPO::operator()()
 	}
 	case tStep::Pause:
 	{
-		auto Time_us = std::chrono::duration_cast<std::chrono::microseconds>(tClock::now() - m_StartTime).count();//C++11
+		const auto Time_us = std::chrono::duration_cast<std::chrono::microseconds>(tClock::now() - m_StartTime).count();//C++11
 
 		if (Time_us > m_WaitTime_us)
 		{
